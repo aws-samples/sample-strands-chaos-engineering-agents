@@ -1,0 +1,22 @@
+# Core AWS and CLI tools
+boto3>=1.34.0
+
+# Strands Agents framework
+strands-agents>=1.0.0
+strands-agents-builder
+
+# Configuration and data handling
+pyyaml>=6.0
+
+# Model Context Protocol
+mcp
+
+# Observability and logging
+watchtower>=3.0.0  # CloudWatch Logs handler
+structlog>=23.0.0  # Structured logging
+
+# Data visualization
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+ipywidgets
