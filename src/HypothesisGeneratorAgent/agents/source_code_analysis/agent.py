@@ -14,7 +14,6 @@ from strands_tools import http_request, shell, file_read
 
 # Import database tools
 import sys
-sys.path.append('/Users/fisherrn/projects/chaos-agent/src')
 from shared.analysis_results import insert_source_analysis
 
 # Bypass tool consent for shell commands

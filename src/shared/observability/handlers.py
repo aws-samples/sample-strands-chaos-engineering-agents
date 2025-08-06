@@ -9,8 +9,8 @@ from typing import Optional
 
 from strands.handlers import PrintingCallbackHandler, CompositeCallbackHandler
 
-from .logging_utils import JSONFormatter
-from ..config import get_log_level, get_log_file_path
+from shared.observability.logging_utils import JSONFormatter
+from shared.config import get_log_level, get_log_file_path
 
 
 class StructuredLoggingHandler:
