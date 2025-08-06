@@ -13,7 +13,6 @@ from strands_tools import use_aws, shell
 
 # Import database tools
 import sys
-sys.path.append('/Users/fisherrn/projects/chaos-agent/src')
 from shared.analysis_results import insert_resource_analysis, get_source_analysis
 from shared.resource_filtering import get_deployed_resources
 from shared.resource_tags import get_workload_tags

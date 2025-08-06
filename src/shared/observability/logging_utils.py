@@ -45,7 +45,7 @@ def get_logger(component_name: str) -> logging.Logger:
     Returns:
         Configured logger instance
     """
-    from ..config import get_log_level
+    from shared.config import get_log_level
     
     logger = logging.getLogger(f"chaos_agent.{component_name}")
     
