@@ -221,6 +221,10 @@ export class ChaosAgentDatabaseStack extends cdk.Stack {
         'https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html',
         'https://docs.aws.amazon.com/fis/latest/userguide/targets.html',
         'https://docs.aws.amazon.com/fis/latest/userguide/stop-conditions.html',
+
+        // Best Practices
+        'https://aws.amazon.com/blogs/mt/best-practices-for-utilizing-aws-systems-manager-with-aws-fault-injection-service/',
+        
       ],
       chunkingStrategy: bedrock.ChunkingStrategy.fixedSize({
         maxTokens: 500,

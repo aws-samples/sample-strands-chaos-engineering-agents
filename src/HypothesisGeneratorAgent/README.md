@@ -157,6 +157,8 @@ The agent generates hypotheses for various AWS services:
 - **ALB/NLB**: Load balancer failures, target health issues
 - **S3**: Access failures, eventual consistency scenarios
 - **DynamoDB**: Throttling, partition key distribution issues
+- **Systems Manager**: Instance inventory, installed software analysis, service configurations
+
 
 ## Safety Guidelines
 

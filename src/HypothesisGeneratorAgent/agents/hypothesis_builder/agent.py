@@ -58,8 +58,18 @@ def hypothesis_builder_agent(query: str) -> str:
             callback_handler=get_callback("hypothesis-builder")
         )
         
-        # Get response from the specialized agent
-        response = agent(query)
-        return str(response.message)
+        # Get response from the specialized agent with timeout handling
+        try:
+            response = agent(query)
+            return str(response.message)
+        except Exception as timeout_error:
+            if "timeout" in str(timeout_error).lower() or "read timed out" in str(timeout_error).lower():
+                # Log timeout and suggest retry with smaller scope
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(f"Hypothesis generation timed out: {timeout_error}")
+                return f"Hypothesis generation timed out. This may be due to processing too many system components. Consider reducing the scope or running the hypothesis generator again with a more focused query. Error: {str(timeout_error)}"
+            else:
+                raise timeout_error
     except Exception as e:
         return f"Error in hypothesis generation: {str(e)}"

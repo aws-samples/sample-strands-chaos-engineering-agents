@@ -287,6 +287,42 @@ insert_resource_analysis(
 )
 ```
 
+## SYSTEMS MANAGER INVENTORY ANALYSIS
+
+Use the **systems_manager_inventory_analysis_agent** tool to get detailed inventory reports of what's installed on managed instances:
+
+**When to Use Systems Manager Inventory Analysis**:
+- When EC2 instances are discovered with SSM agent installed
+- To catalog installed software, applications, and services
+- To document system configurations and installed packages
+- To get comprehensive inventory reports for further analysis
+- To understand what components are actually deployed on systems
+
+**Example Usage**:
+```python
+# Get complete inventory of all managed instances
+systems_manager_inventory_analysis_agent(
+    "Provide a complete inventory of all software installed on managed instances"
+)
+
+# List applications and their versions
+systems_manager_inventory_analysis_agent(
+    "List all applications and their versions across all managed instances"
+)
+
+# Report on running services
+systems_manager_inventory_analysis_agent(
+    "Report on all running services and their configurations in the managed fleet"
+)
+```
+
+**Integration with Resource Discovery**:
+1. **Discover EC2 instances** using standard AWS CLI commands
+2. **Check for SSM agent** and managed instance status
+3. **Call the sub-agent** to get inventory reports for managed instances
+4. **Incorporate inventory data** into the overall resource analysis
+5. **Use inventory information** to inform architecture assessment and failure point identification
+
 ## EKS-SPECIFIC DISCOVERY COMMANDS
 
 When EKS clusters are discovered, perform additional Kubernetes-native discovery:

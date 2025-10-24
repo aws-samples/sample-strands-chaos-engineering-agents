@@ -17,6 +17,9 @@ from shared.analysis_results import insert_resource_analysis, get_source_analysi
 from shared.resource_filtering import get_deployed_resources
 from shared.resource_tags import get_workload_tags
 
+# Import sub-agents
+from .agents.systems_manager_inventory_analysis.agent import systems_manager_inventory_analysis_agent
+
 # Load system prompt
 current_file = Path(__file__)
 prompt_file = current_file.parent / "system_prompt.md"
@@ -45,7 +48,8 @@ def aws_resource_analysis_agent(query: str) -> str:
                 insert_resource_analysis,
                 get_workload_tags,
                 get_source_analysis,
-                get_deployed_resources
+                get_deployed_resources,
+                systems_manager_inventory_analysis_agent
             ],
             system_prompt=SYSTEM_PROMPT,
             callback_handler=get_callback("aws-resource-analysis")

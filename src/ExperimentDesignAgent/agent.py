@@ -19,6 +19,9 @@ from shared.observability import get_callback
 from shared.analysis_results import get_resource_analysis
 from strands.models import BedrockModel
 
+# Import sub-agents
+from .agents.ssm_document_generator.agent import ssm_document_generator_agent
+
 # Load system prompt directly
 from pathlib import Path
 current_file = Path(__file__)
@@ -53,7 +56,10 @@ agent = Agent(
         get_resource_analysis,
         
         # FIS role tool
-        get_fis_execution_role
+        get_fis_execution_role,
+        
+        # Sub-agents
+        ssm_document_generator_agent
     ],
     system_prompt=SYSTEM_PROMPT,
     callback_handler=get_callback("experiment-design")
